@@ -1,0 +1,6 @@
+echo stoping services
+docker stop mysql
+docker rm mysql
+
+mkdir data
+docker run --name mysql -v "$PWD/data:/var/lib/mysql" -e MYSQL_ROOT_PASSWORD=root -d mysql
