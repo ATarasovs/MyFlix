@@ -14,10 +14,10 @@
 
 <h1><?php echo $video['Name']; ?></h1>
 <video id='my-video' class='video-js' controls preload='auto' width='640' height='264'
-       poster="http://vjs.zencdn.net/v/oceans.png"  data-setup='{}'>
+       poster="<?php echo $video['ip']?>/images/<?php echo $video['image']; ?>"  data-setup='{}'>
     <source src="<?php echo $video['ip']?>/videos/<?php echo $video['file']; ?>" type="video/mp4">
 </video>
 
-<?php include '../include/header.php'; ?>
+<?php include '../include/footer.php'; ?>
 
 
