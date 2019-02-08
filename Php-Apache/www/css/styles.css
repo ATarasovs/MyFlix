@@ -2,6 +2,7 @@
 .search-sec{
     padding: 2rem;
 }
+
 .search-slt{
     display: block;
     width: 100%;
@@ -27,6 +28,10 @@
         position: relative;
         top: -114px;
         background: rgba(26, 70, 104, 0.51);
+    }
+    .footer-sec {
+        position: relative;
+        top: -114px;
     }
 }
 

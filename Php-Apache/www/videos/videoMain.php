@@ -9,19 +9,29 @@
 include '../include/header.php';
 
 $videos = $videosCollection->find();
+$count = 0;
 ?>
 <section>
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Yarra_Night_Panorama%2C_Melbourne_-_Feb_2005.jpg"" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Yarra_Night_Panorama%2C_Melbourne_-_Feb_2005.jpg"" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Yarra_Night_Panorama%2C_Melbourne_-_Feb_2005.jpg"" class="d-block w-100" alt="...">
-            </div>
+            <?php foreach ($videos as $video) {
+                if ($count == 0) { ?>
+                    <div class="carousel-item active">
+                        <a href="videoWatch.php?id=<?php echo $video['_id']; ?>">
+                            <img height="800px" src="<?php echo $video['ip']?>/images/<?php echo $video['image']; ?>" class="d-block w-100" alt="...">
+                        </a>
+                    </div>
+                    <?php $count++;
+                }
+                else { ?>
+                    <div class="carousel-item">
+                        <a href="videoWatch.php?id=<?php echo $video['_id']; ?>">
+                            <img height="800px" src="<?php echo $video['ip']?>/images/<?php echo $video['image']; ?>" class="d-block w-100" alt="...">
+                        </a>
+                    </div>
+                    <?php $count++;
+                }
+            } ?>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

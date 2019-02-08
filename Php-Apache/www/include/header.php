@@ -24,6 +24,7 @@ include '../config/mongo_connect.php';
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+<selection>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">MyFlix</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,3 +46,4 @@ include '../config/mongo_connect.php';
             </ul>
         </div>
     </nav>
+</selection>
