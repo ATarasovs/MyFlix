@@ -11,12 +11,20 @@ include '../include/header.php';
 $videos = $videosCollection->find();
 $count = 0;
 ?>
-<section>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+
+<div class="container">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <?php foreach ($videos as $video) {
                 if ($count == 0) { ?>
-                    <div class="carousel-item active">
+                    <div class="item active">
                         <a href="videoWatch.php?id=<?php echo $video['_id']; ?>">
                             <img height="800px" src="<?php echo $video['ip']?>/images/<?php echo $video['image']; ?>" class="d-block w-100" alt="...">
                         </a>
@@ -24,7 +32,7 @@ $count = 0;
                     <?php $count++;
                 }
                 else { ?>
-                    <div class="carousel-item">
+                    <div class="item">
                         <a href="videoWatch.php?id=<?php echo $video['_id']; ?>">
                             <img height="800px" src="<?php echo $video['ip']?>/images/<?php echo $video['image']; ?>" class="d-block w-100" alt="...">
                         </a>
@@ -33,44 +41,17 @@ $count = 0;
                 }
             } ?>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
             <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
             <span class="sr-only">Next</span>
         </a>
     </div>
-</section>
-<section class="search-sec">
-    <div class="container">
-        <form action="#" method="post" novalidate="novalidate">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-12 p-0">
-                            <input type="text" class="form-control search-slt" placeholder="Enter Movie Title">
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12 p-0">
-                            <select class="form-control search-slt" id="exampleFormControlSelect1">
-                                <option>Select Genre</option>
-                                <option>Example one</option>
-                                <option>Example one</option>
-                                <option>Example one</option>
-                                <option>Example one</option>
-                                <option>Example one</option>
-                                <option>Example one</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12 p-0">
-                            <button type="button" class="btn btn-danger wrn-btn">Search</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-</section>
+</div>
 
 <?php include '../include/footer.php'; ?>
