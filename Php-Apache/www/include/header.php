@@ -6,7 +6,10 @@
  * Time: 22:27
  */
 
-include '../config/mongo_connect.php';
+require '../config/sql_connect.php';
+require '../config/mongo_connect.php';
+if(empty($_SESSION['name']))
+    header('Location: ../index.php');
 ?>
 
 <!DOCTYPE html>
