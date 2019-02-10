@@ -6,19 +6,12 @@
  * Time: 23:35
  */
 ?>
+        <div class="top40"></div>
 
-        <section class="footer-sec">
-        <!-- Footer -->
-            <footer class="page-footer font-small blue">
-
-                <!-- Copyright -->
-                <div class="footer-copyright text-center py-3">© 2018 Copyright:
-                    <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-                </div>
-                <!-- Copyright -->
-
-            </footer>
-        </section>
-<!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">Place sticky footer content here.</p>
+            </div>
+        </footer>
     </body>
 </html>
