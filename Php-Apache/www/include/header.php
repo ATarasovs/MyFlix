@@ -44,7 +44,7 @@ if(empty($_SESSION['id']))
                 <li class="nav-item">
                     <a class="nav-link" href="#">Pricing</a>
                 </li class="nav-item right">
-                    <a class="nav-link" href="#">Logout</a>
+                    <a class="nav-link" href="../logout.php">Logout</a>
                 </li>
             </ul>
         </div>
