@@ -9,6 +9,10 @@
 
 require 'config/sql_connect.php';
 
+if(!empty($_SESSION['id']))
+    header('Location: videos/videoMain.php');
+
+
 if(isset($_POST['register'])) {
     $errMsg = '';
 
