@@ -30,20 +30,21 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
+  `surname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `birthdate` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
-(1, 'admin', 'admin@admin.com', 'admin'),
-(2, 'atarasovs', 'atarasovs@dundee.ac.uk', 'admin'),
-(3, 'admin', 'admin@admin.com', 'admin'),
-(4, 'atarasovs', 'atarasovs@dundee.ac.uk', 'admin');
+INSERT INTO `users` (`id`, `username`, `password`, `name`, `surname`, `email`, `birthdate`, `phone`) VALUES
+(1, 'admin', 'admin', 'Admin', 'Admin', 'admin@myflix.com', '12.09.1995', '077775555444');
 
 --
 -- Indexes for dumped tables
