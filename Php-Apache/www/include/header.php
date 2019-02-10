@@ -8,7 +8,7 @@
 
 require '../config/sql_connect.php';
 require '../config/mongo_connect.php';
-if(empty($_SESSION['name']))
+if(empty($_SESSION['id']))
     header('Location: ../index.php');
 ?>
 

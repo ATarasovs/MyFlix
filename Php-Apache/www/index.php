@@ -12,31 +12,35 @@ if(isset($_POST['login'])) {
     $errMsg = '';
 
     // Get data from FORM
-    $email = $_POST['email'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
-    if($email == '')
-        $errMsg = 'Enter email';
+    if($username == '')
+        $errMsg = 'Enter username';
     if($password == '')
         $errMsg = 'Enter password';
 
-    if($email != "" && $password != "") {
+    if($username != "" && $password != "") {
         try {
-            $stmt = $connect->prepare('SELECT * FROM users WHERE email = :email');
+            $stmt = $connect->prepare('SELECT * FROM users WHERE username = :username');
             $stmt->execute(array(
-                ':email' => $email
+                ':username' => $username
             ));
             $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if($data == false){
-                $errMsg = "User $email not found.";
+                $errMsg = "User $username not found.";
             }
             else {
                 if($password == $data['password']) {
-                    $_SESSION['email'] = $data['email'];
-                    $_SESSION['name'] = $data['name'];
-                    $_SESSION['password'] = $data['password'];
                     $_SESSION['id'] = $data['id'];
+                    $_SESSION['username'] = $data['username'];
+                    $_SESSION['password'] = $data['password'];
+                    $_SESSION['name'] = $data['name'];
+                    $_SESSION['surname'] = $data['surname'];
+                    $_SESSION['email'] = $data['email'];
+                    $_SESSION['birthdate'] = $data['birthdate'];
+                    $_SESSION['phone'] = $data['phone'];
 
                     header('Location: videos/videoMain.php');
                     exit();
@@ -75,13 +79,13 @@ if(isset($_POST['login'])) {
         <div class="login-form">
             <div class="main-div">
                 <div class="panel">
-                    <h2>Admin Login</h2>
-                    <p>Please enter your email and password</p>
+                    <h2>Login</h2>
+                    <p>Please enter your username and password</p>
                 </div>
                 <form id="Login" action="" method="post">
 
                     <div class="form-group">
-                        <input type="text" name="email" autocomplete="off" class="form-control" placeholder="Email">
+                        <input type="text" name="username" autocomplete="off" class="form-control" placeholder="Username">
                     </div>
 
                     <div class="form-group">
@@ -90,7 +94,6 @@ if(isset($_POST['login'])) {
 
                     <div class="options">
                         <a href="register.php">Register</a><br/>
-                        <a href="resetPassword.php">Forgot password?</a>
                     </div>
 
                     <input type="submit" name='login' value="Login" class='btn btn-primary'>
