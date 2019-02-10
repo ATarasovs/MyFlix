@@ -43,9 +43,9 @@
                     </div>
                 </div>
 
-                <div class="panel-footer">
-                    <button class="editBtn btn btn-primary btn-block" data-user-id="<?php echo $model->userId; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
-                </div>
+<!--                <div class="panel-footer">-->
+<!--                    <button class="editBtn btn btn-primary btn-block" data-user-id="--><?php //echo $model->userId; ?><!--"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>-->
+<!--                </div>-->
             </div>
         </div>
     </div>

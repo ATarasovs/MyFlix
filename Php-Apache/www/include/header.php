@@ -36,14 +36,14 @@ if(empty($_SESSION['id']))
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="videoMain.php">MyFlix</a>
+                <a class="navbar-brand" href="../videos/videoMain.php">MyFlix</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="videoMain.php">Home</a></li>
-                    <li><a href="videoList.php">All Videos</a></li>
-                    <li><a href="videoTopList.php">Top Videos</a></li>
-                    <li><a href="videoRecentList.php">Most Recent Videos</a></li>
+                    <li><a href="../videos/videoMain.php">Home</a></li>
+                    <li><a href="../videos/videoList.php">All Videos</a></li>
+                    <li><a href="../videos/videoTopList.php">Top Videos</a></li>
+                    <li><a href="../videos/videoRecentList.php">Most Recent Videos</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
