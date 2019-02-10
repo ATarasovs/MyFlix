@@ -50,7 +50,7 @@ if(empty($_SESSION['id']))
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 1.5em;"></i>&nbsp;&nbsp;<?php echo $_SESSION['name'] . " " . $_SESSION['surname']?><span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">My Profile</a></li>
+                            <li><a href="../users/userView.php">My Profile</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="../logout.php">Logout</a></li>
                         </ul>
