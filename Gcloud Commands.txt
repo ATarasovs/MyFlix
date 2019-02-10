@@ -2,4 +2,5 @@ gcloud compute scp --recurse Php-Apache/ a_tarasov1209@apacheserver:Php-Apache/
 gcloud compute scp --recurse MongoCatalogue/ a_tarasov1209@mongocatalogue:MongoCatalogue/
 gcloud compute scp --recurse Php-Apache/www/ a_tarasov1209@apacheserver:Php-Apache/www/
 gcloud compute scp --recurse Videos/ a_tarasov1209@videos:Videos/
+gcloud compute scp --recurse MySql/ a_tarasov1209@mysql:MySql/
 
