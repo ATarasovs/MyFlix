@@ -126,3 +126,10 @@
     }
 }
 
+@media screen and (min-width: 768px) {
+    .container .videojumbotron, .container-fluid .videojumbotron {
+        padding-right: 250px;
+        padding-left: 250px;
+    }
+}
+

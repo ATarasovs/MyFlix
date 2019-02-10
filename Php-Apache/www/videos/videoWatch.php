@@ -11,12 +11,17 @@
     $videoId = $_GET['id'];
     $video = $videosCollection->findOne(array("_id" => new MongoId($videoId)));
 ?>
-
-<h1><?php echo $video['Name']; ?></h1>
-<video id='my-video' class='video-js' controls preload='auto' width='640' height='264'
-       poster="<?php echo $video['ip']?>/images/<?php echo $video['image']; ?>"  data-setup='{}'>
-    <source src="<?php echo $video['ip']?>/videos/<?php echo $video['file']; ?>" type="video/mp4">
-</video>
+<div class="container">
+    <div class="jumbotron videojumbotron">
+        <h3><?php echo $video['Name']; ?></h3>
+        <div align="center" class="embed-responsive embed-responsive-16by9">
+            <video id='my-video' class='video-js embed-responsive-item' controls preload='auto'
+                   poster="<?php echo $video['ip']?>/images/<?php echo $video['image']; ?>"  data-setup='{}'>
+                <source src="<?php echo $video['ip']?>/videos/<?php echo $video['file']; ?>" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
 
 <?php include '../include/footer.php'; ?>
 
