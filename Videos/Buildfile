@@ -1,6 +1,7 @@
 echo stoping services
 docker stop videos
 docker rm videos
+docker rmi videos
 
 docker build -t videos .
 docker run -it -d -p 8888:8080 --name videos videos
