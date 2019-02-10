@@ -19,8 +19,8 @@ $db = "myflix";
 try {
     $connect = new PDO("mysql:dbname=$db;host=$host", $username, $password);
     $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = file_get_contents("data/init.sql");
-    $connect->exec($sql);
+//    $sql = file_get_contents("data/init.sql");
+//    $connect->exec($sql);
 }
 catch(PDOException $e) {
     echo $e->getMessage();
