@@ -7,8 +7,13 @@
      */
 
     include '../include/header.php';
-
-    $videos = $videosCollection->find();
+    $videoTitle = $_GET['title'];
+    if ($videoTitle == null || $videoTitle == "") {
+        $videos = $videosCollection->find();
+    }
+    else {
+        $videos = $videosCollection->find(["name" => $videoTitle]);
+    }
 ?>
 
 <div class="container">
