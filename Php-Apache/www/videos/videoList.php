@@ -60,11 +60,12 @@
     <ul class="list-unstyled video-list-thumbs row">
         <?php foreach ($videos as $video) { ?>
             <li class="col-lg-4 col-sm-6 col-xs-12">
-                <a href="videoWatch.php?id=<?php echo $video['_id']; ?>" title="<?php echo $video['Name']; ?>">
-                    <img src="<?php echo $video['ip']?>/images/<?php echo $video['image']; ?>" alt="<?php echo $video['Name']; ?>" class="img-responsive" height="130px" />
-                    <h2><?php echo $video['Name']; ?> <small>(<?php echo $video['category']; ?>)</small></h2>
+                <a href="videoWatch.php?id=<?php echo $video['_id']; ?>" title="<?php echo $video['name']; ?>">
+                    <img src="<?php echo $video['ip']?>/images/<?php echo $video['image']; ?>" alt="<?php echo $video['name']; ?>" class="img-responsive" height="130px" />
+                    <h2><?php echo $video['name']; ?> <small>(<?php echo $video['category']; ?>)</small></h2>
                     <span class="glyphicon glyphicon-play-circle"></span>
-                    <span class="duration"><?php echo $video['duration']; ?></span>
+                    <span class="duration"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $video['duration']; ?></span>
+                    <span class="rating"><i class="fa fa-star" aria-hidden="true"></i> <?php echo $video['rating']; ?></span>
                 </a>
             </li>
         <?php } ?>

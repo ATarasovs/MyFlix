@@ -109,9 +109,29 @@
     top: 12px;
     transition:all 500ms ease;
 }
+
+.video-list-thumbs .rating{
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    left: 12px;
+    line-height: 13px;
+    padding: 2px 3px 1px;
+    position: absolute;
+    top: 30px;
+    transition:all 500ms ease;
+}
+
 .video-list-thumbs > li > a:hover .duration{
     background-color:#000;
 }
+
+.video-list-thumbs > li > a:hover .rating{
+    background-color:#000;
+}
+
 @media (min-width:320px) and (max-width: 480px) {
     .video-list-thumbs .glyphicon-play-circle{
         font-size: 35px;

@@ -13,7 +13,7 @@
 ?>
 <div class="container">
     <div class="jumbotron videojumbotron">
-        <h3><?php echo $video['Name']; ?></h3>
+        <h3><?php echo $video['name']; ?></h3>
         <div align="center" class="embed-responsive embed-responsive-16by9">
             <video id='my-video' class='video-js embed-responsive-item' controls preload='auto'
                    poster="<?php echo $video['ip']?>/images/<?php echo $video['image']; ?>"  data-setup='{}'>
