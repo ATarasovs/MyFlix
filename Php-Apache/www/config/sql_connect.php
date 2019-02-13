@@ -12,7 +12,7 @@ session_start();
 
 $username = "root";
 $password = "root";
-$host = "35.230.133.102:3306";
+$host = "35.246.119.180:3306";
 $db = "myflix";
 
 // Connecting database
