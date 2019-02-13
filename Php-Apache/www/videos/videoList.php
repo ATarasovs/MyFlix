@@ -10,6 +10,7 @@
 
     $videoTitle = $_GET['title'];
     $videoCategory = $_GET['category'];
+    $orderBy = $_GET['order'];
 
     if (($videoTitle == null || $videoTitle == "") && ($videoCategory == null || $videoCategory == "")){
         $videos = $videosCollection->find();
@@ -22,6 +23,10 @@
     }
     else {
         $videos = $videosCollection->find(["name" => $videoTitle, "category" => $videoCategory]);
+    }
+
+    if ($orderBy == "rating") {
+        $videos = $videos->sort(array('rating'=>-1))->limit(5);
     }
 
     $categories = $categoriesCollection->find();

@@ -60,8 +60,7 @@ catch(PDOException $e) {
                 <ul class="nav navbar-nav">
                     <li><a href="../videos/videoMain.php">Home</a></li>
                     <li><a href="../videos/videoList.php">All Videos</a></li>
-                    <li><a href="../videos/videoTopList.php">Top Videos</a></li>
-                    <li><a href="../videos/videoRecentList.php">Most Recent Videos</a></li>
+                    <li><a href="../videos/videoList.php?order=rating" style="font-weight: 600;">Top 5</a></li>
                     <?php
                         if($subscribed == "false") {
                             echo '<li><a href="../payments/subscribe.php" style="font-weight: 900; color: red;">Subscribe!!!</a></li>';
