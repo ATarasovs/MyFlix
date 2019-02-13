@@ -1,0 +1,6 @@
+echo stoping services
+docker stop jenkins
+docker rm jenkins
+docker run -p 80:8080 -p 50000:50000 -d --name jenkins acobley/jenkinswithmaven
+sleep 20
+docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
