@@ -62,7 +62,7 @@ if(isset($_POST['register'])) {
 }
 
 if(isset($_GET['action']) && $_GET['action'] == 'joined') {
-    $errMsg = 'Registration successfull. Now you can <a href="">login</a>';
+    $errMsg = 'Registration successfull. Now you can <a href="index.php">login</a>';
 }
 ?>
 

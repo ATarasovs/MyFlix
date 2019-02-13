@@ -8,8 +8,26 @@
 
 require '../config/sql_connect.php';
 require '../config/mongo_connect.php';
+
 if(empty($_SESSION['id']))
     header('Location: ../index.php');
+
+$subscribed = "false";
+
+try {
+    $stmt = $connect->prepare('SELECT * FROM payments WHERE user = :user');
+    $stmt->execute(array(
+        ':user' => $_SESSION['id']
+    ));
+    $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if($data != false){
+        $subscribed = "true";
+    }
+}
+catch(PDOException $e) {
+    $errMsg = $e->getMessage();
+}
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +62,11 @@ if(empty($_SESSION['id']))
                     <li><a href="../videos/videoList.php">All Videos</a></li>
                     <li><a href="../videos/videoTopList.php">Top Videos</a></li>
                     <li><a href="../videos/videoRecentList.php">Most Recent Videos</a></li>
+                    <?php
+                        if($subscribed == "false") {
+                            echo '<li><a href="../payments/subscribe.php" style="font-weight: 900; color: red;">Subscribe!!!</a></li>';
+                        }
+                    ?>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -58,7 +81,7 @@ if(empty($_SESSION['id']))
                 </ul>
 
                 <div class="col-sm-3 col-md-3 navbar-right">
-                    <form class="navbar-form" role="search">
+                    <form class="navbar-form" role="search" action="../videos/videoList.php">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search" name="title">
                             <div class="input-group-btn">

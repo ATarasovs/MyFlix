@@ -6,6 +6,23 @@
      * Time: 22:27
      */
 
+    require '../config/sql_connect.php';
+
+    try {
+        $stmt = $connect->prepare('SELECT * FROM payments WHERE user = :user');
+        $stmt->execute(array(
+            ':user' => $_SESSION['id']
+        ));
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if($data == false){
+            header('Location: ../payments/subscribe.php');
+        }
+    }
+    catch(PDOException $e) {
+        $errMsg = $e->getMessage();
+    }
+
     include '../include/header.php';
 
     $videoId = $_GET['id'];
